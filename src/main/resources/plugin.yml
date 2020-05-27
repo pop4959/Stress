@@ -1,0 +1,21 @@
+name: Stress
+version: @version@
+main: org.popcraft.stress.Stress
+api-version: "1.13"
+authors: [pop4959]
+description: A stress test plugin for Bukkit servers.
+website: https://github.com/pop4959/Stress
+commands:
+  stress:
+    description: Core command for the Stress plugin.
+    permission: stress.stress
+    usage: /stress
+  tps:
+    description: Prints a full TPS report.
+    permission: stress.tps
+    usage: /tps
+    aliases: stps
+permissions:
+  stress.stress:
+    description: Core command for the Stress plugin.
+    default: op

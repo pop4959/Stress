@@ -1,0 +1,23 @@
+tps:
+  fullreport: "&7TPS from last %s, %s, %s, %s, %s\n%s&7, %s&7, %s&7, %s&7, %s&7\nTick durations in ms (min, avg, max, stdev)\n%s: %s&7, %s&7, %s&7, %s&7\n%s: %s&7, %s&7, %s&7, %s&7\n%s: %s&7, %s&7, %s&7, %s&7\n%s: %s&7, %s&7, %s&7, %s&7\n%s: %s&7, %s&7, %s&7, %s&7"
+  report: "&7TPS from last %s: %s&7\nTick durations in ms (min, avg, max, stdev)\n%s&7, %s&7, %s&7, %s"
+  debug: "&rImplementation: %s&r, Duration: %.2f&r, Ticks: %d (%s, %s, %s, %s, %s&r), TPS: %s&r, Current: %s&r, Min: %s&r, Avg: %s&r, Max: %s&r, Stdev: %s&r, FindCount: %d&r, FindAvg: %.2f&r"
+  error: "&cUnable to generate a TPS report as there was too little data available."
+test:
+  general:
+    missing-argument: "&cMissing argument: %s"
+    invalid-argument: "&cInvalid argument: %s=%s"
+    player-only: "&cThis test must be run by a player!"
+  chunkgen:
+    starting: "&7Generating chunks for region &d%d&7,&d%d&7 in &d%s&7..."
+    already-generated: "&cThis region contains chunks that have already been generated!"
+  chunkload:
+    starting: "&7Loading chunks for region &d%d&7,&d%d&7 in &d%s&7..."
+    not-generated: "&cThis region contains chunks which have not been generated yet! Enter coordinates for a region known to be fully generated, or simply run the chunk gen test before this one!"
+    time: "&7It took approximately &d%.2f&7 ms to load the entire region."
+  command:
+    starting: "&7Timing command..."
+    time: "&7The command took approximately %s&7 ms to complete."
+  entity: "&7Spawning &d%d&7 x &d%s&7 up to &d%d&7 blocks from the player. Please wait &d%d&7 seconds while performance is measured..."
+  invalid: "&cInvalid or no test selected."
+  ticks: "&7Last &d%d&7 ticks"

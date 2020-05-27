@@ -1,0 +1,19 @@
+locale: en
+tps:
+  implementation: auto
+  truncate: true
+  intervals:
+    shortest: "10 seconds"
+    short: "1 minutes"
+    normal: "5 minutes"
+    long: "15 minutes"
+    longest: "1 hours"
+  tpsColor:
+    default: green
+    '18': yellow
+    '16': red
+  tickColor:
+    default: red
+    '62': yellow
+    '55': green
+debug: false
