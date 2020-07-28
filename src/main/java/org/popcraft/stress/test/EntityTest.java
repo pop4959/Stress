@@ -5,7 +5,6 @@ import org.bukkit.Location;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
-import org.bukkit.entity.Mob;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Projectile;
 import org.bukkit.event.EventHandler;
@@ -24,7 +23,6 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Random;
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
@@ -34,7 +32,7 @@ import java.util.stream.Collectors;
 public class EntityTest extends Test implements Listener {
 
     private final List<String> VALID_ENTITIES = Arrays.stream(EntityType.values())
-            .filter(e -> Objects.nonNull(e.getEntityClass()) && Mob.class.isAssignableFrom(e.getEntityClass()))
+            .filter(EntityType::isSpawnable)
             .map(EntityType::name)
             .map(String::toLowerCase)
             .collect(Collectors.toList());
