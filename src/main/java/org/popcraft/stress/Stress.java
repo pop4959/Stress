@@ -75,11 +75,15 @@ public final class Stress extends JavaPlugin {
         // Enable bStats metrics
         int pluginId = 7063;
         Metrics metrics = new Metrics(this, pluginId);
+        // Register LuckPerms contexts
+        LuckPermsContexts.register();
     }
 
     @Override
     public void onDisable() {
         tickProfiler.stop();
+        // Unregister LuckPerms contexts
+        LuckPermsContexts.unregister();
     }
 
     @Override
