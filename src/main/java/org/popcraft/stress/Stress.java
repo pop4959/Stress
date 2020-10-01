@@ -76,14 +76,18 @@ public final class Stress extends JavaPlugin {
         int pluginId = 7063;
         Metrics metrics = new Metrics(this, pluginId);
         // Register LuckPerms contexts
-        LuckPermsContexts.register();
+        if (serverSupportsContexts()) {
+            LuckPermsContexts.register();
+        }
     }
 
     @Override
     public void onDisable() {
         tickProfiler.stop();
         // Unregister LuckPerms contexts
-        LuckPermsContexts.unregister();
+        if (serverSupportsContexts()) {
+            LuckPermsContexts.unregister();
+        }
     }
 
     @Override
@@ -188,4 +192,12 @@ public final class Stress extends JavaPlugin {
         }
     }
 
+    private boolean serverSupportsContexts() {
+        try {
+            Class.forName("net.luckperms.api.context.ContextCalculator");
+            return true;
+        } catch (ClassNotFoundException e) {
+            return false;
+        }
+    }
 }
