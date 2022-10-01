@@ -1,5 +1,6 @@
 package org.popcraft.stress;
 
+import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -73,8 +74,7 @@ public final class Stress extends JavaPlugin {
             Bukkit.getScheduler().runTaskTimerAsynchronously(this, tickProfiler::tpsDebug, 20, 20);
         }
         // Enable bStats metrics
-        int pluginId = 7063;
-        Metrics metrics = new Metrics(this, pluginId);
+        new Metrics(this, 7063);
         // Register LuckPerms contexts
         if (serverSupportsContexts()) {
             LuckPermsContexts.register();
