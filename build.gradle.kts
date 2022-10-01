@@ -4,8 +4,8 @@ plugins {
     id("com.github.johnrengelman.shadow") version "7.1.2"
 }
 
-group = project.property("pluginGroup")
-version = project.property("pluginVersion")
+group = "${project.property("pluginGroup")}"
+version = "${project.property("pluginVersion")}"
 
 java {
     toolchain {
