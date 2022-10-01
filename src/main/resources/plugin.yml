@@ -1,5 +1,5 @@
 name: Stress
-version: @version@
+version: ${version}
 main: org.popcraft.stress.Stress
 softdepend: [LuckPerms]
 api-version: "1.13"
