@@ -1,7 +1,7 @@
 plugins {
     id("java-library")
     id("maven-publish")
-    id("com.github.johnrengelman.shadow") version "7.1.0"
+    id("com.github.johnrengelman.shadow") version "7.1.2"
 }
 
 group = project.property("pluginGroup")
@@ -9,7 +9,7 @@ version = project.property("pluginVersion")
 
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(8))
+        languageVersion.set(JavaLanguageVersion.of(17))
     }
     withSourcesJar()
 }
@@ -20,10 +20,10 @@ repositories {
 }
 
 dependencies {
-    testCompileOnly(group = "junit", name = "junit", version = "4.12")
-    compileOnly(group = "com.destroystokyo.paper", name = "paper-api", version = "1.15.2-R0.1-SNAPSHOT")
-    compileOnly(group = "net.luckperms", name = "api", version = "5.0")
-    implementation(group = "io.papermc", name = "paperlib", version = "1.0.2")
+    testCompileOnly(group = "junit", name = "junit", version = "4.13.2")
+    compileOnly(group = "io.papermc.paper", name = "paper-api", version = "1.19.2-R0.1-SNAPSHOT")
+    compileOnly(group = "net.luckperms", name = "api", version = "5.4")
+    implementation(group = "io.papermc", name = "paperlib", version = "1.0.8-SNAPSHOT")
 }
 
 tasks {
