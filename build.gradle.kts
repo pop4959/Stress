@@ -15,7 +15,7 @@ java {
 }
 
 repositories {
-    jcenter()
+    mavenCentral()
     maven("https://papermc.io/repo/repository/maven-public/")
 }
 
