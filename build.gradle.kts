@@ -24,6 +24,7 @@ dependencies {
     compileOnly(group = "io.papermc.paper", name = "paper-api", version = "1.19.2-R0.1-SNAPSHOT")
     compileOnly(group = "net.luckperms", name = "api", version = "5.4")
     implementation(group = "io.papermc", name = "paperlib", version = "1.0.8-SNAPSHOT")
+    implementation(group = "org.bstats", name = "bstats-bukkit", version = "3.0.0")
 }
 
 tasks {
@@ -44,6 +45,7 @@ tasks {
         archiveClassifier.set("")
         archiveFileName.set("${rootProject.name.capitalize()}-${project.version}.jar")
         relocate("io.papermc.lib", "org.popcraft.stress.paperlib")
+        relocate("org.bstats", "org.popcraft.stress.bstats")
     }
     build {
         dependsOn(shadowJar)
