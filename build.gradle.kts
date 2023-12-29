@@ -1,7 +1,9 @@
+import java.util.*
+
 plugins {
     id("java-library")
     id("maven-publish")
-    id("com.github.johnrengelman.shadow") version "7.1.2"
+    id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
 group = "${project.property("pluginGroup")}"
@@ -21,10 +23,10 @@ repositories {
 
 dependencies {
     testCompileOnly(group = "junit", name = "junit", version = "4.13.2")
-    compileOnly(group = "io.papermc.paper", name = "paper-api", version = "1.19.2-R0.1-SNAPSHOT")
+    compileOnly(group = "io.papermc.paper", name = "paper-api", version = "1.20.4-R0.1-SNAPSHOT")
     compileOnly(group = "net.luckperms", name = "api", version = "5.4")
-    implementation(group = "io.papermc", name = "paperlib", version = "1.0.8-SNAPSHOT")
-    implementation(group = "org.bstats", name = "bstats-bukkit", version = "3.0.0")
+    implementation(group = "io.papermc", name = "paperlib", version = "1.0.8")
+    implementation(group = "org.bstats", name = "bstats-bukkit", version = "3.0.2")
 }
 
 tasks {
@@ -43,7 +45,7 @@ tasks {
     }
     shadowJar {
         archiveClassifier.set("")
-        archiveFileName.set("${rootProject.name.capitalize()}-${project.version}.jar")
+        archiveFileName.set("${rootProject.name.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }}-${project.version}.jar")
         relocate("io.papermc.lib", "org.popcraft.stress.paperlib")
         relocate("org.bstats", "org.popcraft.stress.bstats")
     }
