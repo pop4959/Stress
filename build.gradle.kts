@@ -3,7 +3,7 @@ import java.util.*
 plugins {
     id("java-library")
     id("maven-publish")
-    id("com.github.johnrengelman.shadow") version "8.1.1"
+    id("com.gradleup.shadow") version "8.3.3"
 }
 
 group = "${project.property("pluginGroup")}"
@@ -11,7 +11,7 @@ version = "${project.property("pluginVersion")}"
 
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(17))
+        languageVersion.set(JavaLanguageVersion.of(21))
     }
     withSourcesJar()
 }
@@ -23,7 +23,7 @@ repositories {
 
 dependencies {
     testCompileOnly(group = "junit", name = "junit", version = "4.13.2")
-    compileOnly(group = "io.papermc.paper", name = "paper-api", version = "1.20.4-R0.1-SNAPSHOT")
+    compileOnly(group = "io.papermc.paper", name = "paper-api", version = "1.21.1-R0.1-SNAPSHOT")
     compileOnly(group = "net.luckperms", name = "api", version = "5.4")
     implementation(group = "io.papermc", name = "paperlib", version = "1.0.8")
     implementation(group = "org.bstats", name = "bstats-bukkit", version = "3.0.2")
